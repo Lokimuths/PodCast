@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/margin_1x"
+    android:layout_marginTop="@dimen/margin_1x"
+    android:layout_marginEnd="@dimen/margin_1x">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="32dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btnPlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_1x"
+                android:layout_marginTop="@dimen/margin_1x"
+                android:layout_marginBottom="@dimen/margin_1x"
+                android:layout_weight="1"
+                android:contentDescription="@string/play_desc"
+                android:src="@drawable/ic_play"
+                app:backgroundTint="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/orange" />
+
+            <TextView
+                android:id="@+id/tvTittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_1x"
+                android:layout_marginTop="@dimen/margin_half"
+                android:textColor="@color/textPrimary"
+                app:layout_constraintStart_toEndOf="@+id/btnPlay"
+                app:layout_constraintTop_toTopOf="@+id/btnPlay"
+                tools:text="Copying Anxiety" />
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/textGray"
+                android:layout_marginStart="@dimen/margin_1x"
+                app:layout_constraintBottom_toBottomOf="@+id/btnPlay"
+                app:layout_constraintStart_toEndOf="@+id/btnPlay"
+                app:layout_constraintTop_toBottomOf="@+id/tvTittle"
+                tools:text="20 min ago" />
+
+            <TextView
+                android:id="@+id/tvSeparator"
+                android:textSize="12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/textGray"
+                android:layout_marginStart="@dimen/margin_1x"
+                app:layout_constraintBottom_toBottomOf="@+id/btnPlay"
+                app:layout_constraintStart_toEndOf="@+id/tvDate"
+                app:layout_constraintTop_toBottomOf="@+id/tvTittle"
+                android:text="@string/separator"/>
+
+            <TextView
+                android:id="@+id/tvDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/textGray"
+                android:layout_marginStart="@dimen/margin_1x"
+                app:layout_constraintBottom_toBottomOf="@+id/btnPlay"
+                app:layout_constraintStart_toEndOf="@+id/tvSeparator"
+                app:layout_constraintTop_toBottomOf="@+id/tvTittle"
+                tools:text="24:51"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

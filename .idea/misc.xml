@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/bg_rounded_button.xml" value="0.137" />
+        <entry key="app/src/main/res/drawable/ic_check.xml" value="0.137" />
+        <entry key="app/src/main/res/drawable/ic_close.xml" value="0.137" />
+        <entry key="app/src/main/res/drawable/ic_folder.xml" value="0.137" />
+        <entry key="app/src/main/res/drawable/ic_mic.xml" value="0.137" />
+        <entry key="app/src/main/res/drawable/ic_play.xml" value="0.137" />
+        <entry key="app/src/main/res/drawable/ic_undo.xml" value="0.137" />
+        <entry key="app/src/main/res/layout/a_home.xml" value="0.26744186046511625" />
+        <entry key="app/src/main/res/layout/a_record.xml" value="0.22940979003906248" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.21492462158203127" />
+        <entry key="app/src/main/res/layout/f_save_bottom_sheet.xml" value="0.19039735099337748" />
+        <entry key="app/src/main/res/layout/li_audio.xml" value="0.27380952380952384" />
+        <entry key="app/src/main/res/layout/li_empty.xml" value="0.22056159420289856" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

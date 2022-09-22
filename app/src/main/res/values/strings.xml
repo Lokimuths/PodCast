@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">PodCast</string>
+    <string name="mic_desc">Mic Icon</string>
+    <string name="folder_desc">Folder Icon</string>
+    <string name="record">Record</string>
+    <string name="import_file">Import files</string>
+    <string name="play_desc">Play Icon</string>
+    <string name="separator">●</string>
+    <string name="empty_list">Empty List Icon</string>
+    <string name="undo">Undo</string>
+    <string name="undo_desc">Undo Icon</string>
+    <string name="start">Start</string>
+    <string name="start_desc">Start Icon</string>
+    <string name="continue_play">Continue</string>
+    <string name="stop">Stop</string>
+    <string name="save">Save</string>
+    <string name="save_desc">Save Icon</string>
+    <string name="zero_time">00:00</string>
+    <string name="save_your_recording">Save your recording</string>
+    <string name="create_podcast">Create Podcast</string>
+    <string name="record_podcast">Record Podcast</string>
+</resources>

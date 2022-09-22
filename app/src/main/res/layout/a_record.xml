@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary"
+    tools:context=".ui.HomeActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/toolbarTitle"
+            style="@style/ToolbarTitle"
+            android:text="@string/record_podcast" />
+
+        <ImageView
+            android:id="@+id/ivClose"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_close"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
+        style="@style/CustomCardView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_1x"
+        app:cardBackgroundColor="@color/cardBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvTimeline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_3x"
+                android:textColor="@color/textPrimary"
+                android:textSize="@dimen/txt_48"
+                android:textStyle="bold"
+                android:text="@string/zero_time"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.imn.iivisu.RecorderVisualizer
+                android:id="@+id/visualizerRecorder"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/visualizer_height"
+                app:backgroundBarPrimeColor="@color/primary"
+                app:barWidth="3dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTimeline"
+                app:loadedBarPrimeColor="@color/purpleButton"
+                app:maxAmp="200"
+                app:spaceBetweenBar="2dp" />
+
+            <com.imn.iivisu.PlayerVisualizer
+                android:id="@+id/visualizerPlayer"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/visualizer_height"
+                android:visibility="gone"
+                app:approximateBarDuration="75"
+                app:backgroundBarPrimeColor="@color/primary"
+                app:barWidth="3dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTimeline"
+                app:loadedBarPrimeColor="@color/purpleButton"
+                app:maxAmp="200"
+                app:spaceBetweenBar="2dp"
+                tools:visibility="visible" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPlay"
+                style="@style/CircleIconButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:icon="@drawable/ic_play"
+                app:layout_constraintBottom_toBottomOf="@+id/visualizerPlayer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTimeline"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Button.Circle"
+                tools:visibility="visible" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clAction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_2x"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnUndo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_4x"
+                    android:contentDescription="@string/undo_desc"
+                    android:src="@drawable/ic_undo"
+                    app:backgroundTint="@color/undo"
+                    app:fabCustomSize="50dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/btnRecord"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/btnRecord"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/undo"
+                    android:textColor="@color/textPrimary"
+                    app:layout_constraintEnd_toEndOf="@+id/btnUndo"
+                    app:layout_constraintStart_toStartOf="@+id/btnUndo"
+                    app:layout_constraintTop_toTopOf="@+id/tvRecord" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnRecord"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/start_desc"
+                    android:src="@drawable/ic_mic"
+                    app:backgroundTint="@color/orange"
+                    app:fabCustomSize="60dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:id="@+id/tvRecord"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_half"
+                    android:text="@string/start"
+                    android:textColor="@color/textPrimary"
+                    app:layout_constraintEnd_toEndOf="@+id/btnRecord"
+                    app:layout_constraintStart_toStartOf="@+id/btnRecord"
+                    app:layout_constraintTop_toBottomOf="@+id/btnRecord" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnSave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_4x"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/save_desc"
+                    android:src="@drawable/ic_check"
+                    app:backgroundTint="@color/purpleButton"
+                    app:fabCustomSize="50dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/btnRecord"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/btnRecord"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/save"
+                    android:textColor="@color/textPrimary"
+                    app:layout_constraintEnd_toEndOf="@+id/btnSave"
+                    app:layout_constraintStart_toStartOf="@+id/btnSave"
+                    app:layout_constraintTop_toTopOf="@+id/tvRecord" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
