@@ -19,4 +19,11 @@
     <string name="save_your_recording">Save your recording</string>
     <string name="create_podcast">Create Podcast</string>
     <string name="record_podcast">Record Podcast</string>
+    <string name="file_already_exist">A file with this name already exist</string>
+    <string name="file_saved">File saved</string>
+    <string name="need_permission">Need permissions</string>
+    <string name="permission_require">Some permissions are required to do the task.</string>
+    <string name="com_ok">OK</string>
+    <string name="com_cancel">Cancel</string>
+    <string name="permission_continue">You need permissions to continue.</string>
 </resources>

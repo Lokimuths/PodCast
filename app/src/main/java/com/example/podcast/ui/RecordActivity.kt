@@ -84,12 +84,12 @@ class RecordActivity : AppCompatActivity() {
 
             val dest = File(filesDir, "$filename.wav")
             if (dest.exists()) {
-                Toast.makeText(this, "A file with this name already exist", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.file_already_exist), Toast.LENGTH_SHORT).show()
                 throw FileAlreadyExistsException(dest)
             }
             val success = src.renameTo(dest)
             if (success) {
-                Toast.makeText(this, "File saved", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.file_saved), Toast.LENGTH_SHORT).show()
                 finish()
             }
         } catch (e: IOException) {

@@ -7,12 +7,10 @@ import android.os.Build
 import android.os.Bundle
 import android.os.FileUtils
 import android.provider.MediaStore
-import android.util.Log
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.podcast.R
 import com.example.podcast.databinding.AHomeBinding
 import com.example.podcast.library.audio.AudioPlayer
 import com.example.podcast.library.utils.getMediaDuration
@@ -27,6 +25,10 @@ class HomeActivity : AppCompatActivity(), FilesAdapter.Listener {
     private lateinit var binding: AHomeBinding
     private var adapter: FilesAdapter? = null
     private lateinit var player: AudioPlayer
+
+    companion object {
+        const val WAV = "wav"
+    }
 
     private val audioPickerResult =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
@@ -67,8 +69,7 @@ class HomeActivity : AppCompatActivity(), FilesAdapter.Listener {
         val directory = File(path)
         val files: Array<File> = directory.listFiles() as Array<File>
         for (i in files.indices) {
-            Log.d("Files", "FileName:" + files[i].name)
-            if (files[i].extension == "wav") {
+            if (files[i].extension == WAV) {
                 listFiles.add(
                     RecordedFile(
                         file = files[i],
@@ -97,7 +98,6 @@ class HomeActivity : AppCompatActivity(), FilesAdapter.Listener {
 
     private fun proceedAudioSelection(result: ActivityResult) {
         if (result.resultCode == RESULT_OK) {
-            Log.d("Result", result.data.toString())
             val myAudio = getAudioFile(result.data)
             val destination = File(filesDir, myAudio.name)
             try {
@@ -110,7 +110,7 @@ class HomeActivity : AppCompatActivity(), FilesAdapter.Listener {
     }
 
     private fun renameFile(src: File) {
-        val dest = File(filesDir, "${src.nameWithoutExtension}.wav")
+        val dest = File(filesDir, "${src.nameWithoutExtension}.$WAV")
         src.renameTo(dest)
     }
 

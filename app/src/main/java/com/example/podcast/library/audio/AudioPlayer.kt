@@ -1,7 +1,6 @@
 package com.example.podcast.library.audio
 
 import android.content.Context
-import android.util.Log
 import com.example.podcast.library.Holder
 import com.example.podcast.library.utils.WAVE_HEADER_SIZE
 import com.example.podcast.library.utils.recordFile
@@ -70,7 +69,7 @@ class AudioPlayer private constructor(context: Context) : Player.Listener {
         }
         return this
     }
-    
+
     fun togglePlay() {
         if (!player.isPlaying) {
             resume()
@@ -172,6 +171,5 @@ class AudioPlayer private constructor(context: Context) : Player.Listener {
 
     override fun onPlayerError(error: PlaybackException) {
         super.onPlayerError(error)
-        Log.e(TAG, error.toString(), error)
     }
 }

@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.example.podcast.R
 
 class ManagePermissions(private val activity: Activity, private val list: List<String>, private val code:Int) {
 
@@ -39,10 +40,10 @@ class ManagePermissions(private val activity: Activity, private val list: List<S
 
     private fun showAlert() {
         val builder = AlertDialog.Builder(activity)
-        builder.setTitle("Need permissions")
-        builder.setMessage("Some permissions are required to do the task.")
-        builder.setPositiveButton("OK") { _, _ -> requestPermissions() }
-        builder.setNeutralButton("Cancel", null)
+        builder.setTitle(R.string.need_permission)
+        builder.setMessage(R.string.permission_require)
+        builder.setPositiveButton(R.string.com_ok) { _, _ -> requestPermissions() }
+        builder.setNeutralButton(R.string.com_cancel, null)
         val dialog = builder.create()
         dialog.show()
     }
@@ -51,7 +52,7 @@ class ManagePermissions(private val activity: Activity, private val list: List<S
     private fun requestPermissions() {
         val permission = deniedPermission()
         if (ActivityCompat.shouldShowRequestPermissionRationale(activity, permission)) {
-            Toast.makeText(activity, "You need permissions to continue.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(activity, R.string.permission_continue, Toast.LENGTH_SHORT).show()
         } else {
             ActivityCompat.requestPermissions(activity, list.toTypedArray(), code)
         }
